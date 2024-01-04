@@ -98,11 +98,15 @@ export default {
         : "";
     },
     enterChat() {
+      if(!this.userNameInput){
+        return
+      }
       localStorage.setItem("UserName", this.userNameInput);
-      this.fetchUserName();
+      this.userName = this.userNameInput
     },
     connect() {
-      this.socketInstance = io("http://localhost:3000");
+      const url = "https://protected-ocean-08526.herokuapp.com/"
+      this.socketInstance = io(url);
 
       this.socketInstance.emit("join", {
         roomName: this.name,

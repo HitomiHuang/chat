@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 import axios from 'axios'
 
-const baseURL = 'http://localhost:3000'
+const baseURL = 'https://protected-ocean-08526.herokuapp.com/'
 
 export const Toast = Swal.mixin({
   toast: true,
